@@ -1,0 +1,59 @@
+---
+const pageTitle = "About Me";
+
+const identity = {
+    "name" : "Massimiliano",
+    "surname" : "Lambertini",
+    "country" : "Italy",
+    "occupation" : "DBA, Developer",
+    "hobbies" : ["Lego","Tabletop Roleplaying"],
+    "political" : "socialdemocrat"
+}
+
+const skillz = ["C#","SQL","C++","Perl","HTML","Css"]
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>El Lamboz -- {pageTitle}</title>
+        <style>
+            h1 {
+              color: purple;
+              font-size: 4rem;
+            }
+          </style>        
+	</head>
+	<body>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+
+		<h1>{pageTitle}</h1>
+        <h2>A Reluctant Great Old One</h2>
+
+        <h3>Some facts...</h3>
+        <ul>
+            <li>Full name is {identity.name} {identity.surname} </li>
+            <li>I live in {identity.country}</li>
+            <li>I work as {identity.occupation}</li>
+            <li>Hobbies are:
+                <ul>
+                    {identity.hobbies.map( (h) => <li>{h}</li>)}
+                </ul>
+            </li>
+            <li>Skillz are:
+            <ul>
+                {skillz.map( (h) => <li>{h}</li>)}
+            </ul>
+            </li>
+            <li>And I might be called a... { identity.political==="socialdemocrat" ? "Comrade" : "Dirty Reactionary Pig"}</li>
+        </ul>
+
+
+	</body>
+</html>
