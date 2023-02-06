@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "El Lamboz Home Page";
+import Greeting from '../components/Greeting';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<h2>This is muh blog!</h2>
+	<Greeting client:load messages={["Hi","Welcom","Bienvenu","Vut na cicles"]} />
 </BaseLayout>
