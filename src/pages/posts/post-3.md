@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/MarkdownPostLayout.astro"
 title: "With yells of triumph came"
 tags: ['curiosity', 'essay', 'note']
 pubDate: 2018-04-23 12:00:00

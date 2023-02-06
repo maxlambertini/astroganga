@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css'
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 
 const identity = {
@@ -19,14 +17,6 @@ const skillColor= "#C00001"
 const skillSize="3.1rem"
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>El Lamboz -- {pageTitle}</title>
         <style define:vars={{skillColor, skillSize}}>
             h1 {
               color: purple;
@@ -42,15 +32,8 @@ const skillSize="3.1rem"
             font-weight: bold;
             }            
           </style>        
-	</head>
-	<body>
-        <Header />
-
-
-		<h1>{pageTitle}</h1>
-        <h2>A Reluctant Great Old One</h2>
-
-        <h3>Some facts...</h3>
+<BaseLayout pageTitle={pageTitle}>
+<h3>Some facts...</h3>
         <ul>
             <li>Full name is {identity.name} {identity.surname} </li>
             <li>I live in {identity.country}</li>
@@ -67,9 +50,4 @@ const skillSize="3.1rem"
             </li>
             <li>And I might be called a... { identity.political==="socialdemocrat" ? "Comrade" : "Dirty Reactionary Pig"}</li>
         </ul>
-        <Footer />
-		<script>
-			import "../scripts/menu.js"
-		</script>
-	</body>
-</html>
+    </BaseLayout>

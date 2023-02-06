@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/MarkdownPostLayout.astro"
 title: "The helm is usually but"
 tags: ['funny', 'games', 'curiosity']
 pubDate: 2018-01-05 12:00:00

@@ -1,4 +1,5 @@
 ---
+layout: "../../layouts/MarkdownPostLayout.astro"
 title: "With this arrangement he satisfied,"
 tags: ['speculation', 'article', 'sci-fi']
 pubDate: 2022-09-21 12:00:00
