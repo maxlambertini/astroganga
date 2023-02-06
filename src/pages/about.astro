@@ -1,4 +1,7 @@
 ---
+import '../styles/global.css'
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const pageTitle = "About Me";
 
 const identity = {
@@ -12,6 +15,9 @@ const identity = {
 
 const skillz = ["C#","SQL","C++","Perl","HTML","Css"]
 
+const skillColor= "#C00001"
+const skillSize="3.1rem"
+
 ---
 
 <html lang="en">
@@ -21,17 +27,25 @@ const skillz = ["C#","SQL","C++","Perl","HTML","Css"]
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>El Lamboz -- {pageTitle}</title>
-        <style>
+        <style define:vars={{skillColor, skillSize}}>
             h1 {
               color: purple;
               font-size: 4rem;
             }
+            .skill {
+            color: var(--skillColor);
+            font-size: var(--skillSize);
+            font-weight: bold;
+            }            
+            .hobbiez {
+            color: chocolate;
+            font-weight: bold;
+            }            
           </style>        
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Header />
+
 
 		<h1>{pageTitle}</h1>
         <h2>A Reluctant Great Old One</h2>
@@ -43,17 +57,19 @@ const skillz = ["C#","SQL","C++","Perl","HTML","Css"]
             <li>I work as {identity.occupation}</li>
             <li>Hobbies are:
                 <ul>
-                    {identity.hobbies.map( (h) => <li>{h}</li>)}
+                    {identity.hobbies.map( (h) => <li class="hobbiez">{h}</li>)}
                 </ul>
             </li>
             <li>Skillz are:
             <ul>
-                {skillz.map( (h) => <li>{h}</li>)}
+                {skillz.map( (h) => <li class="skill">{h}</li>)}
             </ul>
             </li>
             <li>And I might be called a... { identity.political==="socialdemocrat" ? "Comrade" : "Dirty Reactionary Pig"}</li>
         </ul>
-
-
+        <Footer />
+		<script>
+			import "../scripts/menu.js"
+		</script>
 	</body>
 </html>
